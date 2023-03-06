@@ -575,11 +575,7 @@ button {
     line-height: 1.5;
     padding: 0.7875rem 1.319rem;
 }
-/* .accordion.style-1 .accordion-button .bgl-danger, .accordion.style-1 .accordion-button .bgl-primary, .accordion.style-1 .accordion-button .bgl-success {
-    background: hsla(0,0%,100%,.5);
-    border-color: #fff;
-    color: #fff;
-} */
+
 
 .accordion.style-1 .accordion-button:after {
     background: hsla(0,0%,100%,.3);
