@@ -13,6 +13,7 @@ export class OrdersComponent implements OnInit {
   orders: any[] = [];
   order:any
   cartDetails: any;
+  bookings: any;
 
   constructor(private orderService: OrdersServiceService) { }
 
@@ -32,6 +33,23 @@ export class OrdersComponent implements OnInit {
       console.log(this.orders)
     })
    
+  }
+
+  approveItem(booking: any) {
+    const id = booking.id;
+    const status = 'Delivering';
+    const index = this.bookings.findIndex((r: any) => r.id === booking.id);
+    console.log(index);
+
+    this.orderService.updateItemStatus(id, status).subscribe(
+      (res) => {
+        console.log(res, 'see console');
+        window.location.reload();
+      },
+      (err) => {
+        console.error(err);
+      }
+    );
   }
   
 
