@@ -14,6 +14,9 @@ export class DashboardComponent implements OnInit {
   order:any
   cartDetails: any;
   bookings: any;
+complete:any[] = [];
+Delivering:any[] = [];
+
 
   constructor(private orderService: OrdersServiceService) { }
 
@@ -28,12 +31,30 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.orderService.getOrders().subscribe((booking: any) =>{
-      this.orders = booking.data;
-      console.log(this.orders)
-    })
-   
+  this.orderService.getOrders().subscribe((booking: any) => {
+    console.table(booking.data); 
+    this.orders = booking.data.filter((order: any) => order.attributes.status === "Approved");
+    this.complete = booking.data.filter((order: any) => order.attributes.status === "Completed");
+    this.Delivering = booking.data.filter((order: any) => order.attributes.status === "Delivering");
+    console.table(this.orders);
+    console.log(this.complete,"completed")
+    console.log(this.Delivering,"Delivering")
+
+
+  });
+  // this.completed()
+  // console.log(this.completed,"completed")
+
   }
+
+// completed(){
+//   this.orderService.getOrders().subscribe((booking: any) => {
+//     this.complete = booking.data.filter((order: any) => order.attributes.status === "Delivering");
+//     console.log(this.complete,"completed");
+//   });
+
+// }
+ 
 
   approveItem(booking: any) {
     const id = booking.id;
@@ -53,5 +74,5 @@ export class DashboardComponent implements OnInit {
   }
 
 
-  
+
 }
