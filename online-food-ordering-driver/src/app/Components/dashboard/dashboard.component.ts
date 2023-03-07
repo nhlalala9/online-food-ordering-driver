@@ -30,9 +30,16 @@ Delivering:any[] = [];
     })
   }
 
+  tab: string = 'order';
+
+  setTab(tab: string){
+    // alert(tab)
+    this.tab = tab;
+  }
+
   ngOnInit(): void {
   this.orderService.getOrders().subscribe((booking: any) => {
-    console.table(booking.data); 
+    console.table(booking.data);
     this.orders = booking.data.filter((order: any) => order.attributes.status === "Approved");
     this.complete = booking.data.filter((order: any) => order.attributes.status === "Completed");
     this.Delivering = booking.data.filter((order: any) => order.attributes.status === "Delivering");
@@ -42,19 +49,11 @@ Delivering:any[] = [];
 
 
   });
-  // this.completed()
-  // console.log(this.completed,"completed")
 
   }
 
-// completed(){
-//   this.orderService.getOrders().subscribe((booking: any) => {
-//     this.complete = booking.data.filter((order: any) => order.attributes.status === "Delivering");
-//     console.log(this.complete,"completed");
-//   });
 
-// }
- 
+
 
   approveItem(booking: any) {
     const id = booking.id;

@@ -8,7 +8,7 @@
         <div class="d-flex justify-content-between mb-3 mb-sm-0">
           <div class="d-flex">
             <img
-              src="/react/demo/static/media/pic-6.199cc1a04dcaf9bdc95b.jpg"
+              src="http://cdn.onlinewebfonts.com/svg/img_504768.png"
               alt=""
             />
             <div>
@@ -171,6 +171,9 @@
           </div>
         </div>
       </div>
+
+
+
       <div class="container">
         <div class="row">
           <div class="col-xl-4">
@@ -186,7 +189,7 @@
                       aria-selected="true"
                       class="nav-link active"
                       tabindex="0"
-                      href="#"
+                      (click)="setTab('order')"
                       >Order in</a
                     ><a
                       id="react-aria31190898-8-tab-Prepared"
@@ -196,7 +199,7 @@
                       aria-selected="false"
                       tabindex="-1"
                       class="nav-link"
-                      href="#"
+                      (click)="setTab('prepared')"
                       >Prepared</a
                     ><a
                       id="react-aria31190898-8-tab-Delivered"
@@ -206,8 +209,8 @@
                       aria-selected="false"
                       tabindex="-1"
                       class="nav-link"
-                      href="#"
-                      >Delivered</a
+                      (click)="setTab('completed')"
+                      >Delivering</a
                     >
                   </div>
                 </nav>
@@ -235,10 +238,74 @@
                       </div>
                     </div>
                   </div>
+
+                  <div *ngIf="tab === 'order'">
+                    <div
+                      role="tabpanel"
+                      id="react-aria31190898-8-tabpane-Order"
+                      aria-labelledby="react-aria31190898-8-tab-Order"
+                      class="fade tab-pane active show"
+                      *ngFor="let item of orders"
+                    >
+                      <div
+                        (click)="selector(item?.id)"
+                        class="orderin-bx d-flex align-items-center justify-content-between click"
+                      >
+                        <div>
+                          <h4>Order #{{ item?.id }}</h4>
+                          <span>{{ item?.attributes.date }}</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                          <h4 class="text-primary mb-0">
+                            R {{ item?.attributes.total }}
+                          </h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div *ngIf="tab === 'prepared'">
+                    <div
+
+                    >
+                      <div
+                        class="orderin-bx d-flex align-items-center justify-content-between" *ngFor="let item of Delivering"
+                        (click)="selector(item?.id)"
+                      >
+                        <div>
+                          <h4>Prepared</h4>
+                          <h6>Order #{{ item?.id }}</h6>
+                          <span>{{ item?.attributes.date }}</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                          <h4 class="text-primary mb-0">R {{ item?.attributes.total }}</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div *ngIf="tab === 'completed'">
+                    <div>
+                      <div
+                        class="orderin-bx d-flex align-items-center justify-content-between"*ngFor="let item of complete" (click)="selector(item?.id)"
+                      >
+                        <div>
+                          <h4>Delivered</h4>
+                          <h6>Order #{{ item?.id }}</h6>
+                          <span>{{ item?.attributes.date }}</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                          <h4 class="text-primary mb-0">R {{ item?.attributes.total }}</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+
+
           <div class="col-xl-8">
             <div class="card border-0">
               <h4 class="cate-title mb-sm-3 mb-2 mt-xl-0 mt-3">Order Details</h4>
@@ -274,7 +341,7 @@
                         </div>
                       </div>
                     </div>
-      
+
                     <div class="col-xl-2"></div>
                   </div>
                   <div class="order-menu style-1 mt-3">
@@ -333,7 +400,7 @@
           </div>
         </div>
       </div>
-      
+
     </div>
   </div>
 </div>
