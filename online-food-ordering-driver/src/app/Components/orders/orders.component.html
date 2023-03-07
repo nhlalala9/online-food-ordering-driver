@@ -1,84 +1,4 @@
-<input type="checkbox" id="nav-toggle" />
 
-<div class="sidebar">
-  <div class="sidebar-brand">
-    <h2><span class="las la-star"></span> <span>Food</span></h2>
-  </div>
-  <div class="sidebar-menu">
-    <ul>
-      <li>
-        <a href="restuarant/dashboard" class="active"
-          ><span class="las la-igloo"></span> <span>DashBoard</span></a
-        >
-      </li>
-      <!-- <li>
-        <a href="restuarant/customers"><span class="las la-user-friends"></span>
-          <span>Customers</span></a>
-       
-      </li> -->
-      <li>
-        <a href="restuarant/products"
-          ><span class="las la-hamburger"></span> <span>Products</span></a
-        >
-      </li>
-      <li>
-        <a href="/restuarant/orders"
-          ><span class="las la-clipboard-list"></span> <span>Orders</span></a
-        >
-      </li>
-      <!-- <li>
-        <a href="restuarant/drivers"><span class="las la-car"></span>
-          <span>Drivers</span></a>
-       
-      </li> -->
-      <li>
-        <a href="/restuarant/bookings"
-          ><span class="las la-book"></span> <span>Bookings</span></a
-        >
-      </li>
-      <li>
-        <a href="/restuarant/reviews"
-          ><span class="las la-star-half-alt"></span>
-          <span>Reviews & Ratings</span></a
-        >
-      </li>
-    </ul>
-  </div>
-  <div class="log">
-    <li>
-      <a href="/restuarant/login"
-        ><span class="las la-arrow-left"></span> <span>Logout</span></a
-      >
-    </li>
-  </div>
-</div>
-
-<div class="main-content">
-  <header>
-    <h1>
-      <label for="nav-toggle">
-        <span class="las la-bars"></span>
-      </label>
-    </h1>
-
-    <div class="search-wrapper">
-      <span class="las la-search"></span>
-      <input type="search" placeholder="search here" />
-    </div>
-
-    <div class="user-wrapper">
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/25/25634.png"
-        width="40px"
-        height="40px"
-        alt=""
-      />
-      <div>
-        <h4>Toka</h4>
-        <small>Addmin</small>
-      </div>
-    </div>
-  </header>
 
   <div class="container">
     <div class="row">
@@ -140,10 +60,12 @@
                     <h4 class="text-primary mb-0">
                       R {{ item?.attributes.total }}
                     </h4>
+                    <a class="icon-bx" href="/react/demo/orders">
+                        <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
                   </div>
                 </div>
               </div>
-              <div
+              <!-- <div
                 role="tabpanel"
                 id="react-aria31190898-8-tabpane-Prepared"
                 aria-labelledby="react-aria31190898-8-tab-Prepared"
@@ -288,7 +210,7 @@
                     <h4 class="text-primary mb-0">$202.00</h4>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -339,7 +261,7 @@
                 >
                   <img
                     class="me-3"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCWuuZizf8W3t9J7RpYZ7qYad9dDPz_uFqUQ&usqp=CAU"
+                    src={{item?.attributus?.Picture?.data?.attributes?.url}}
                     alt=""
                   />
                   <div>
@@ -383,7 +305,7 @@
       </div>
     </div>
   </div>
-</div>
+
 
 
 
