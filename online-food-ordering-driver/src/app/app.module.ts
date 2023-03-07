@@ -8,11 +8,13 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { OrdersComponent } from './Components/orders/orders.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    OrdersComponent
+    OrdersComponent,
+   
   ],
   imports: [
     BrowserModule,
