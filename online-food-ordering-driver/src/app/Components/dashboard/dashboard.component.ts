@@ -33,7 +33,6 @@ Delivering:any[] = [];
   tab: string = 'order';
 
   setTab(tab: string){
-    // alert(tab)
     this.tab = tab;
   }
 
