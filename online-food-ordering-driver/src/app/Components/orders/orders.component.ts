@@ -38,7 +38,7 @@ export class OrdersComponent implements OnInit {
   approveItem(booking: any) {
     const id = booking.id;
     const status = 'Delivering';
-    const index = this.bookings.findIndex((r: any) => r.id === booking.id);
+    const index = this.orders.findIndex((r: any) => r.id === booking.id);
     console.log(index);
 
     this.orderService.updateItemStatus(id, status).subscribe(
