@@ -48,7 +48,7 @@ Delivering:any[] = [];
 
 
   });
-
+console.log(this.username,"driver")
   }
 
 
@@ -57,10 +57,11 @@ Delivering:any[] = [];
   approveItem(booking: any) {
     const id = booking.id;
     const status = 'Delivering';
+    const driver = this.username
     const index = this.orders.findIndex((r: any) => r.id === booking.id);
     console.log(index);
 
-    this.orderService.updateItemStatus(id, status).subscribe(
+    this.orderService.updateItemStatus(id, status, driver).subscribe(
       (res) => {
         console.log(res, 'see console');
         window.location.reload();

@@ -29,11 +29,11 @@ export class OrdersServiceService {
   deleteOrder(id: number): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl}/${id}`);
   }
-  updateItemStatus(id: any, status: any) {
+  updateItemStatus(id: any, status: any,driver:any) {
     const url = `${this.apiUrl}/${id}`;
-    const data = { data: { status: status } };
+    const data = { data: { status: status, driver:driver } };
     return this.http.put(url, data);
   }
-  
+
 
 }

@@ -218,30 +218,6 @@
                   </div>
                 </nav>
                 <div class="tab-content">
-                  <div
-                    role="tabpanel"
-                    id="react-aria31190898-8-tabpane-Order"
-                    aria-labelledby="react-aria31190898-8-tab-Order"
-                    class="fade tab-pane active show"
-                    *ngFor="let item of orders"
-                  >
-                    <div
-                      (click)="selector(item?.id)"
-                      class="orderin-bx d-flex align-items-center justify-content-between click"
-                    >
-                      <div>
-                        <h4>Order #{{ item?.id }}</h4>
-                        <span>{{ item?.attributes.date }}</span>
-                      </div>
-                      <div class="d-flex align-items-center">
-                        <h4 class="text-primary mb-0">
-                          R {{ item?.attributes.total }}
-                        </h4>
-                        <a class="icon-bx" href="/react/demo/orders"> </a>
-                      </div>
-                    </div>
-                  </div>
-
                   <div *ngIf="tab === 'order'">
                     <div
                       role="tabpanel"
@@ -387,11 +363,11 @@
                 </div>
               </div>
               <div class="text-end">
-                <!-- <a
+                <a
                   class="btn btn-outline-danger me-sm-4 me-2"
-                  href="/react/demo/orders"
+                  *ngIf="order?.attributes?.status === 'Approved'"
                   >Reject Order</a
-                > -->
+                >
                 <a
                   class="btn btn-primary"
                   *ngIf="order?.attributes?.status === 'Approved'"
