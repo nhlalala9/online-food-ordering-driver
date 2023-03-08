@@ -6,19 +6,26 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { OrdersComponent } from './Components/orders/orders.component';
-
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule,Validators } from '@angular/forms';
+import { RegisterComponent } from './Components/register/register.component';
+import { LoginComponent } from './Components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    OrdersComponent
+    OrdersComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
