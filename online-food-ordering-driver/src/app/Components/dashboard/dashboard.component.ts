@@ -7,7 +7,7 @@ import { OrdersServiceService } from 'src/app/Services/orders-service.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
+  public username = localStorage.getItem('s_username');
 
 
   orders: any[] = [];
