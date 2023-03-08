@@ -32,25 +32,25 @@ export class OrdersComponent implements OnInit {
       this.orders = booking.data;
       console.log(this.orders)
     })
-   
+
   }
 
-  approveItem(booking: any) {
-    const id = booking.id;
-    const status = 'Delivering';
-    const index = this.orders.findIndex((r: any) => r.id === booking.id);
-    console.log(index);
+  // approveItem(booking: any) {
+  //   const id = booking.id;
+  //   const status = 'Delivering';
+  //   const index = this.orders.findIndex((r: any) => r.id === booking.id);
+  //   console.log(index);
 
-    this.orderService.updateItemStatus(id, status).subscribe(
-      (res) => {
-        console.log(res, 'see console');
-        window.location.reload();
-      },
-      (err) => {
-        console.error(err);
-      }
-    );
-  }
-  
+  //   this.orderService.updateItemStatus(id, status).subscribe(
+  //     (res) => {
+  //       console.log(res, 'see console');
+  //       window.location.reload();
+  //     },
+  //     (err) => {
+  //       console.error(err);
+  //     }
+  //   );
+  // }
+
 
 }
