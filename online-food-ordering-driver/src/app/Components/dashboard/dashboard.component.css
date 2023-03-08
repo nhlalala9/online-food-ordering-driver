@@ -90,23 +90,7 @@ img, svg {
     margin-right: calc(var(--bs-gutter-x)/-2);
     margin-top: calc(var(--bs-gutter-y)*-1);
 }
-/* 
-@media (min-width: 1200px){
-.col-xl-4 {
-    flex: 0 0 auto;
-    width: 33.33333%;
-}
-} */
-/* .row>* {
-    flex-shrink: 0;
-    margin-top: var(--bs-gutter-y);
-    max-width: 100%;
-    padding-left: calc(var(--bs-gutter-x)/2);
-    padding-right: calc(var(--bs-gutter-x)/2);
-    width: 100%;
-}
 
-*/
 
 .card {
     background-color: initial;

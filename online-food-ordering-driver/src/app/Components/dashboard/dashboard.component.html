@@ -363,11 +363,11 @@
                 </div>
               </div>
               <div class="text-end">
-                <!-- <a
+                <a
                   class="btn btn-outline-danger me-sm-4 me-2"
-                  href="/react/demo/orders"
+                  *ngIf="order?.attributes?.status === 'Approved'"
                   >Reject Order</a
-                > -->
+                >
                 <a
                   class="btn btn-primary"
                   *ngIf="order?.attributes?.status === 'Approved'"
