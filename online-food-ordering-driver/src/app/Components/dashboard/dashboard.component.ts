@@ -26,7 +26,7 @@ Delivering:any[] = [];
     this.orderService.getOrderById(id).subscribe((booking: any) =>{
       this.order = booking.data;
       this.cartDetails = this.order.attributes.cartDetails;
-      console.log(this.cartDetails, "qwerty")
+      console.log(this.cartDetails, "order items")
     })
   }
 
@@ -42,7 +42,7 @@ Delivering:any[] = [];
     this.orders = booking.data.filter((order: any) => order.attributes.status === "Approved");
     this.complete = booking.data.filter((order: any) => order.attributes.status === "Completed");
     this.Delivering = booking.data.filter((order: any) => order.attributes.status === "Delivering");
-    console.table(this.orders);
+    console.log(this.orders, "pending Approval");
     console.log(this.complete,"completed")
     console.log(this.Delivering,"Delivering")
 
