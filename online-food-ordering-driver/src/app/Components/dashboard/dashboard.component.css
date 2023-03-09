@@ -67,12 +67,7 @@ img, svg {
 .card-body {
     padding: 1.875rem;
 }
-@media (min-width: 1400px){
-.col-xxl-6 {
-    /* flex: 0 0 auto; */
-    /* width: 50%; */
-}
-}
+
 
 
 .container {
