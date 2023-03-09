@@ -35,22 +35,7 @@ export class OrdersComponent implements OnInit {
 
   }
 
-  // approveItem(booking: any) {
-  //   const id = booking.id;
-  //   const status = 'Approved';
-  //   const index = this.bookings.findIndex((r: any) => r.id === booking.id);
-  //   console.log(index);
 
-  //   this.BookingsService.updateItemStatus(id, status).subscribe(
-  //     (res) => {
-  //       console.log(res, 'see console');
-  //       window.location.reload();
-  //     },
-  //     (err) => {
-  //       console.error(err);
-  //     }
-  //   );
-  // }
 
 
 }
