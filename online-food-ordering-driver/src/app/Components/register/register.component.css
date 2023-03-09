@@ -91,12 +91,7 @@
   :before {
     box-sizing: border-box;
   }
-  /* user agent stylesheet
-  img {
-    overflow-clip-margin: content-box;
-    overflow: clip;
-  } */
-  
+
   .form-control {
     background: #fff;
     border-color: #b3b3b3;
