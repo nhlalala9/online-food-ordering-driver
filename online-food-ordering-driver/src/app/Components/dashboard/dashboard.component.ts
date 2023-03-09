@@ -17,6 +17,8 @@ export class DashboardComponent implements OnInit {
 complete:any[] = [];
 Delivering:any[] = [];
 
+pageSize = 10;
+currentPage = 1;
 
   constructor(private orderService: OrdersServiceService) { }
 
